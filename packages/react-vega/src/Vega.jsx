@@ -8,6 +8,7 @@ import vegaEmbed from 'vega-embed';
 import { capitalize, isDefined, isFunction } from './util';
 
 const propTypes = {
+  actions: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   background: PropTypes.string,
   className: PropTypes.string,
   data: PropTypes.object,
@@ -25,6 +26,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  actions: undefined,
   background: undefined,
   className: '',
   data: {},
@@ -76,7 +78,7 @@ class Vega extends React.Component {
       let changed = false;
 
       // update view properties
-      ['width', 'height', 'renderer', 'logLevel', 'background']
+      ['width', 'height', 'renderer', 'logLevel', 'background', 'actions']
         .filter(field => props[field] !== prevProps[field])
         .forEach(field => {
           this.view[field](props[field]);
@@ -174,6 +176,7 @@ class Vega extends React.Component {
 
   propsToEmbedOptions(props) {
     return {
+      ...(isDefined(props.actions) ? { actions: props.actions } : {}),
       ...(props.enableHover ? { hover: props.enableHover } : {}),
       ...(props.height ? { height: props.height } : {}),
       ...(props.logLevel ? { logLevel: props.logLevel } : {}),
