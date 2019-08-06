@@ -9,27 +9,8 @@
     "url": "https://github.com/vega/react-vega/issues"
   },
   "private": true,
-  "dependencies": {
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
-    "react-dom": "^16.8.6",
-    "react": "^16.8.6",
-    "vega-lite": "^3.1.0",
-    "vega": "^5.4.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@superset-ui/build-config": "^0.1.1",
-    "@superset-ui/commit-config": "^0.0.9",
-    "babel-loader": "^8.0.6",
-    "gh-pages": "^2.0.1",
-    "husky": "^3.0.0",
-    "lerna": "^3.15.0",
-    "lint-staged": "^9.2.0",
-    "react-scripts": "^3.0.1"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "engines": {
     "node": ">=8.10.0"
   },
